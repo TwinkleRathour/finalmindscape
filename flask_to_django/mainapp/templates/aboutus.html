@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mindscape</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/32966b6d49.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'index' %}" class="home"><i class="fa-solid fa-house"></i></a></li>
+                &nbsp; 
+                <li><a href="{% url 'index' %}" class="home">Home</a></li>
+                <li><a href="{% url 'ai' %}" class="home">AI</a></li>
+                <li><a href="{% url 'ml' %}" class="home">ML</a></li>
+                <li><a href="{% url 'project' %}" class="home">Crafts & Diy</a></li>
+                <li><a href="" class="explore">Explore Courses</a></li>
+                <li><label for="search"><input type="search" id="search" placeholder="Search"></label></li>
+                <li><a href="{% url 'aboutus'%}" id="ff">About Us</a></li>
+                {% if user.is_authenticated %}
+                    <li class="welcome-user">Welcome, {{ user.username }}!</li>
+                    <li><a href="{% url 'logout' %}" class="logout-btn"><span>Logout</span></a></li>
+                {% else %}
+                    <li><a href="{% url 'signup' %}" class="signup-btn"><span>Sign Up</span></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="about-section txt-white">
+        <!-- Hero Section -->
+        <div id="box1" class="motion shadow_box text_control">
+            <h1>Welcome to Mindscape</h1>
+            <p class="mission-statement">
+                Empowering minds through creative learning and innovative education
+            </p>
+            <label for="button"></label>
+            <input type="button" value="Start Learning Today" id="button">
+        </div>
+
+        <!-- Our Story Section -->
+        <div class="about-content bg_color">
+            <h2>Our Story</h2>
+            <div class="story-content motion shadow_box">
+                <p>
+                    Mindscape was born from a vision to revolutionize online learning by creating a space where creativity meets technology. 
+                    We believe that everyone has the potential to learn and grow, regardless of their background or previous experience.
+                </p>
+            </div>
+
+            <!-- What We Offer Section -->
+            <h2>What We Offer</h2>
+            <div class="offerings flexxing text_control">
+                <div class="offering-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>Diverse Learning Paths</h3>
+                        <p>From AI and Machine Learning to Creative DIY projects, we offer a wide range of courses designed to meet your learning goals.</p>
+                    </div>
+                </div>
+                <div class="offering-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from industry professionals and experienced educators who are passionate about sharing their knowledge.</p>
+                    </div>
+                </div>
+                <div class="offering-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>Interactive Learning</h3>
+                        <p>Engage with hands-on projects, real-world applications, and a supportive community of fellow learners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <h2>Our Impact</h2>
+            <div class="stats-section flexxing text_control">
+                <div class="stat-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>1000+</h3>
+                        <p>Courses Available</p>
+                    </div>
+                </div>
+                <div class="stat-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>650+</h3>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+                <div class="stat-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>100+</h3>
+                        <p>Expert Instructors</p>
+                    </div>
+                </div>
+                <div class="stat-item change motion shadow_box">
+                    <div class="upper_part">
+                        <h3>4.3★</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <h2>Get in Touch</h2>
+            <div class="contact-section motion shadow_box">
+                <p class="contact-info">
+                    Have questions or suggestions? We'd love to hear from you!<br>
+                    Email: contact@mindscape.com<br>
+                    Follow us on social media for the latest updates and learning tips.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

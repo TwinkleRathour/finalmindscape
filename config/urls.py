@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from flask_to_django.mainapp import views
+from mainapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),

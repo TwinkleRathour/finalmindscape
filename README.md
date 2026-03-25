@@ -31,7 +31,7 @@ Whether you are exploring AI/ML concepts for the first time or building with Dja
 ## 🗃️ Project Structure
 
 ```
-finalmindscape/
+Mindscape/
 ├── config/                  # Django project configuration
 │   ├── __init__.py
 │   ├── settings.py          # Project settings
